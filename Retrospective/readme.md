@@ -10,4 +10,4 @@
 ## LINK
 
 - [20200217](https://github.com/wowww/TIL/blob/master/Retrospective/20200217.md)  
-- [20200218]()
+- [20200218](https://github.com/wowww/TIL/blob/master/Retrospective/20200218.md)
