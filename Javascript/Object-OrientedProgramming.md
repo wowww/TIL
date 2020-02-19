@@ -12,9 +12,9 @@
 - [x] [class constructor](https://www.opentutorials.org/module/4047/24615)  
 - [x] [class에서 객체의 method 구현하기](https://www.opentutorials.org/module/4047/24616)  
 - [x] [class 상속](https://www.opentutorials.org/module/4047/24619)  
-- [ ] [super](https://www.opentutorials.org/module/4047/24620)  
-- [ ] [객체간의 상속](https://www.opentutorials.org/module/4047/24626)  
-- [ ] [객체와 함수](https://www.opentutorials.org/module/4047/24628)  
+- [x] [super](https://www.opentutorials.org/module/4047/24620)  
+- [x] [객체간의 상속](https://www.opentutorials.org/module/4047/24626)  
+- [x] [객체와 함수](https://www.opentutorials.org/module/4047/24628)  
 - [ ] [prototype vs __proto__](https://www.opentutorials.org/module/4047/24629)  
 - [ ] [생성자를 통한 상속](https://www.opentutorials.org/module/4047/24630)  
 
