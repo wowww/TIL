@@ -5,4 +5,9 @@
 <br />
 
 # Categories 
-- 해당 링크 연결 경로   
+- :file_folder: [Javascript](https://github.com/wowww/TIL/tree/master/Javascript)  
+  : 클릭 시, javascript에 해당하는 폴더로 이동됩니다. 인강, 글로 정리한 목록 등을 볼 수 있습니다.   
+- :file_folder: [Retrospective](https://github.com/wowww/TIL/tree/master/Retrospective)    
+  : 클릭 시, Retrospective에 해당하는 폴더로 이동됩니다. 회고는 날짜별로 정리되어 있습니다.  
+- :file_folder: [nodeJS](https://github.com/wowww/TIL/tree/master/nodeJS)  
+  : 클릭 시, NodeJS에 해당하는 폴더로 이동됩니다. Express로 서버 구현하기 등을 볼 수 있습니다.
