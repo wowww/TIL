@@ -9,7 +9,7 @@
 
 <br>
 
-<img width="500px" alt="브라우저 동작 원리" src="https://poiemaweb.com/img/client-server.png">  
+<img alt="브라우저 동작 원리" src="https://poiemaweb.com/img/client-server.png">  
 
 
 <br />  
