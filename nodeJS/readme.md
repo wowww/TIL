@@ -184,3 +184,222 @@ http://localhost:3000/ 에 접속했을 때 css 가 적용된 페이지가 나�
 
 
 출처: https://velopert.com/294
+
+
+--- 
+
+# EJS - Express 프레임 워크 응용하기
+
+## 0. 디렉토리 구조
+```
+express_tutorial/
+├── data
+│   └── user.json
+├── node_modules
+├── package.json
+├── public
+│   └── css
+│       └── style.css
+├── router
+│   └── main.js
+├── server.js
+└── views
+    ├── body.ejs
+    ├── header.ejs
+    └── index.ejs
+```
+
+이번 강좌에선 `data/user.json` 이 추가되었고 `view/ 내부 파일들`이 변경되었습니다.  
+
+## 1. 의존 모듈 추가
+저번 강좌에서는 그저 페이지 라우팅만 다뤘지만, 강좌 10편에서는 EJS 엔진과 추가적으로 RESTful API, 그리고 세션을 다룰 것이므로 넣어줘야 할 의존 모듈들이 있습니다.  
+- **body-parser** - POST 데이터 처리
+- **express-session** - 세션 관리 
+
+우선 전 강좌에서 작성했던 pakage.json 을 업데이트 합니다.  
+
+``` javascript
+{
+  "name": "express-tutorial",
+  "version": "1.0.0",
+  "dependencies":
+  {
+    "express": "~4.13.1",
+    "ejs": "~2.4.1"    ,
+    "body-parser": "~1.14.2",
+    "express-session": "~1.13.0"
+  }
+}
+```
+
+그 후 다음 명령어를 입력해 모듈을 설치합니다.  
+
+```
+$ npm install
+```
+
+추가한 모듈들을 server.js 에서 불러오겠습니다.  
+
+``` javascript
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var session = require('express-session');
+var fs = require("fs")
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+
+
+var server = app.listen(3000, function(){
+ console.log("Express server has started on port 3000")
+});
+
+app.use(express.static('public'));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(session({
+ secret: '@#@$MYSIGN#@$#$',
+ resave: false,
+ saveUninitialized: true
+}));
+
+
+var router = require('./router/main')(app, fs);
+// ... 생략
+```
+
+Express 의 이전 버전에서는 `cookie-parser` 모듈도 불러와야 했지만, 이젠 `express-session` 모듈이 직접 쿠리에 접근하므로 `cookie-parser` 를 더이상 사용할 필요가 없습니다.  
+
+추가적으로 `Node.js` 에 내장되어 있는 `fs`모듈도 불러왔는데, 이는 나중에 파일을 열기 위함입니다. 그리고 원래 상단에 있던 `Router` 코드를 아래로 내려주세요. (Line 27) 이 코드가 `bodyParser` 설정 아래 부분에 있다면 제대로 작동하지 않습니다. 그리고 Router에서 `fs` 모듈을 사용할 수 있도록 인자로 추가해 줍니다.  
+router/main.js 에서 첫번 째 줄도 업데이트 해주세요.
+
+``` javascript
+module.exports = function(app, fs)
+// ... 생략
+```
+
+section 부분에서의 값에 대해서 알아보겠습니다.  
+- **secret** - 쿠키를 임의로 변조하는 것을 방지하기 위한 sign 값 입니다. 원하는 값을 넣으면 됩니다.  
+- **resave** - 세션을 언제나 저장할 지(변경하지 않아도) 정하는 값입니다. `express-session documentation` 에서는 이 값을 `false`로 하는 것을 권장하고 필요에 따라 `true`로 설정합니다.  
+- **saveUninitialized** - uninitialized 세션이란 새로 생겼지만 변경되지 않은 세션을 의미합니다. Documentation에서 이 값을 true로 설정하는 것을 권장합니다.  
+
+
+## 2. EJS 템플릿 엔진
+템플릿 엔진이란, 템플릿을 읽어 엔진의 문법과 설정에 따라서 파일을 HTML형식으로 변환시키는 모듈입니다. Express에서 사용하는 인기있는 `Jade 템플릿 엔진`은 기존의 HTML에 비해 작성법이 완전히 다른데, 그에 비해 `EJS`는 똑같은 HTML에서 `<% %>`를 사용하여 서버의 데이터를 사용하거나 코드를 실행 할 수 있습니다.  
+
+EJS에서는 두가지만 알면 됩니다.  
+1. <% 자바스크립트 코드 %>  
+2. <% 출력 할 자바스크립트 객체 %>  
+
+2번에서는 Javascript 객체를 router에서 받아올 수도 있습니다.  
+
+### VIEW로 데이터 넘기기
+우선, 전 강좌에서 작성(맨위에 작성)하였던 `views/index.html`과 `views/about.html`을 삭제하고, `router/main.js`를 다음과 같이 수정하세요.  
+
+``` javascript
+module.exports = function(app, fs)
+{
+     app.get('/',function(req,res){
+         res.render('index', {
+             title: "MY HOMEPAGE",
+             length: 5
+         })
+     });
+}
+```
+
+JSON 데이터를 render 메소드의 두번째 인자로 전달함으로서 페이지에서 데이터를 사용가능하게 합니다.  
+
+
+### VIEW에서 데이터 접근 및 루프코드 실행
+
+이제 `views/index.ejs`를 다음과 같이 만들어 주세요.  
+
+``` html
+<html>
+  <head>
+  <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <h1>Loop it!</h1>
+    <ul>
+        <% for(var i=0; i<length; i++){ %>
+            <li>
+                <%= "LOOP" + i %>
+            </li>
+        <% } %>
+    </ul>
+  </body>
+</html>
+```
+**Line 3**: 라우터에서 title 받아와서 출력합니다.  
+**Line 9~13**: 루프문입니다.  
+
+### 출력
+
+서버를 실행하고 http:/localhost:3000/ 에 접속해보세요.  
+
+```
+$ node server.js
+```
+
+
+<img width="400" src="https://i.imgur.com/UYkHo0Z.png">  
+
+성공했나요? 이제 view 코드를 여러 파일로 분리해 봅시다.  
+
+### EJS 분할하기
+
+PHP나 Rails에서 처럼, EJS에서도 코드를 여러 파일로 분리하고 불러와서 사용 할 수 있답니다.  
+파일을 불러올땐 다음 코드를 사용합니다.  
+
+```
+<% include FILENAME %>
+```
+
+`index.ejs` 파일의 head와 body를 따로 파일로 저장해서 불러와보겠습니다.  
+
+header.ejs 파일과 body.ejs 파일:
+
+``` ejs
+<title>
+     <%= title %>
+ </title>
+ <link rel="stylesheet" type="text/css" href="css/style.css">
+ <script>
+    console.log("HelloWorld");
+ </script>
+ 
+ // header.ejs
+```
+``` ejs
+<h1>Loop it!</h1>
+<ul>
+    <% for(var i=0; i<length; i++){ %>
+        <li>
+            <%= "LOOP" + i %>
+        </li>
+    <% } %>
+</ul>
+
+// body.ejs
+```
+이렇게 파일이 준비됐다면, `index.ejs `를 다음과 같이 수정하면 됩니다.  
+
+``` ejs
+<html>
+  <head>
+    <% include ./header.ejs %>
+  </head>
+  <body>
+    <% include ./body.ejs %>
+  </body>
+</html>
+// index.ejs
+```
+
+출처: https://velopert.com/379  
