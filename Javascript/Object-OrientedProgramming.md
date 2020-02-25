@@ -15,6 +15,6 @@
 - [x] [super](https://www.opentutorials.org/module/4047/24620)  
 - [x] [객체간의 상속](https://www.opentutorials.org/module/4047/24626)  
 - [x] [객체와 함수](https://www.opentutorials.org/module/4047/24628)  
-- [ ] [prototype vs __proto__](https://www.opentutorials.org/module/4047/24629)  
-- [ ] [생성자를 통한 상속](https://www.opentutorials.org/module/4047/24630)  
+- [x] [`prototype` vs `__proto__`](https://www.opentutorials.org/module/4047/24629)  
+- [x] [생성자를 통한 상속](https://www.opentutorials.org/module/4047/24630)  
 
