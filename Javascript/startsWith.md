@@ -23,3 +23,5 @@ string.startsWith(searchString, length)
 'abcde'.startsWith('A');
 ```
 `abcde`가 `A`로 시작하는지 검사합니다. 대소문자를 구분하므로 `false`를 반환합니다.
+
+출처: https://www.codingfactory.net/10903
