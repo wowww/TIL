@@ -18,3 +18,5 @@
 - [20200223](https://github.com/wowww/TIL/blob/master/Retrospective/20200223.md)  
 - [20200224](https://github.com/wowww/TIL/blob/master/Retrospective/20200224.md)
 - [20200225](https://github.com/wowww/TIL/blob/master/Retrospective/20200225.md)  
+- [20200226](https://github.com/wowww/TIL/blob/master/Retrospective/20200226.md)  
+- [20200227](https://github.com/wowww/TIL/blob/master/Retrospective/20200227.md)  
