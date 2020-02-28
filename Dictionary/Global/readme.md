@@ -1,0 +1,8 @@
+# Global
+
+
+## Link
+
+[Global]()
+
+- [parseInt]()

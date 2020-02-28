@@ -1,0 +1,7 @@
+# Boolean
+
+## Link
+
+[Boolean]()
+
+- [toString]()

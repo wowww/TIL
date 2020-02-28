@@ -1,0 +1,7 @@
+# Number
+
+## Link
+
+[Number]()
+
+- [toFixed]()
