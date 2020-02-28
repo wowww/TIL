@@ -2,6 +2,6 @@
 
 ## Link
 
-[MAth]()
+[MAth](https://github.com/wowww/TIL/blob/master/Dictionary/Math/Math.md)
 
 - [floor]()
