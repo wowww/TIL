@@ -13,3 +13,5 @@
   : 클릭 시, `NodeJS` 폴더로 이동됩니다. Express로 서버 구현하기 등을 볼 수 있습니다.
 - :file_folder: [Dictionary](https://github.com/wowww/TIL/tree/master/Dictionary)    
   : 클릭 시, `Dictionary` 폴더로 이동됩니다. Javascript Dictionary입니다.   
+- :file_folder: [Git](https://github.com/wowww/TIL/tree/master/Git)    
+  : 클릭 시, `Git` 폴더로 이동됩니다. 나만의 커밋 메세지 룰 등을 볼 수 있습니다.
