@@ -159,7 +159,7 @@ var server = app.listen(3000, function(){
 ## 정적 파일(Static files) 다루기  
 정적 파일이란?  
 HTML에서 사용되는 .js 파일, css 파일, image 파일 등을 가리킵니다.  
-서버에서 정적 파일을 다루기 위해선, express.sratic() 메소드를 사용하면 됩니다.  
+서버에서 정적 파일을 다루기 위해선, express.static() 메소드를 사용하면 됩니다.  
 public/css 디렉토리를 만들고, 그 안에 style.css 파일을 생성해주세요.  
 
 ``` css
