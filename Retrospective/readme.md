@@ -12,10 +12,10 @@
 - :file_folder: [2020년 02월](https://github.com/wowww/TIL/tree/master/Retrospective/202002)   
   : 클릭 시, `202002` 폴더로 이동됩니다. 2020년 2월의 TIL을 볼 수 있습니다.     
 - :file_folder: [2020년 03월](https://github.com/wowww/TIL/tree/master/Retrospective/202003)  
-  : 클릭 시, `202002` 폴더로 이동됩니다. 2020년 3월의 TIL을 볼 수 있습니다.     
+  : 클릭 시, `202003` 폴더로 이동됩니다. 2020년 3월의 TIL을 볼 수 있습니다.     
 - :file_folder: [2020년 07월](https://github.com/wowww/TIL/tree/master/Retrospective/202007)   
-  : 클릭 시, `202002` 폴더로 이동됩니다. 2020년 7월의 TIL을 볼 수 있습니다.     
+  : 클릭 시, `202007` 폴더로 이동됩니다. 2020년 7월의 TIL을 볼 수 있습니다.     
 - :file_folder: [2020년 8월](https://github.com/wowww/TIL/tree/master/Retrospective/202008)  
-  : 클릭 시, `202002` 폴더로 이동됩니다. 2020년 8월의 TIL을 볼 수 있습니다.   
+  : 클릭 시, `202008` 폴더로 이동됩니다. 2020년 8월의 TIL을 볼 수 있습니다.   
 - :file_folder: [2020년 9월](https://github.com/wowww/TIL/tree/master/Retrospective/202009)  
-  : 클릭 시, `202002` 폴더로 이동됩니다. 2020년 2월의 TIL을 볼 수 있습니다.   
+  : 클릭 시, `202009` 폴더로 이동됩니다. 2020년 2월의 TIL을 볼 수 있습니다.   
