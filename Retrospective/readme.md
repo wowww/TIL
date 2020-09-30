@@ -18,4 +18,4 @@
 - :file_folder: [2020년 8월](https://github.com/wowww/TIL/tree/master/Retrospective/202008)  
   : 클릭 시, `202008` 폴더로 이동됩니다. 2020년 8월의 TIL을 볼 수 있습니다.   
 - :file_folder: [2020년 9월](https://github.com/wowww/TIL/tree/master/Retrospective/202009)  
-  : 클릭 시, `202009` 폴더로 이동됩니다. 2020년 2월의 TIL을 볼 수 있습니다.   
+  : 클릭 시, `202009` 폴더로 이동됩니다. 2020년 9월의 TIL을 볼 수 있습니다.   
